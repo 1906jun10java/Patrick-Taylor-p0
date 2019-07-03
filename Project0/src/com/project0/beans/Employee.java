@@ -11,15 +11,15 @@ public class Employee extends User {
 	private Double offers;
 
 	private Double payments;
-	private Array
+	
 
 	// getters and setters for the Employee Class
 
-	public String getUsername() {
+	//public String getUsername() {
 
-		return username;
+		//return username;
 
-	}
+	
 
 	public void setUsername(String username) {
 
