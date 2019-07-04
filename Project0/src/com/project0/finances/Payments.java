@@ -19,17 +19,17 @@ public class Payments {
 	public double payments;
 	public double rate;
 
-	public HashMap<String, Double> carLot(){
+	public int carLot(){
 		
 			HashMap<String, Double> carList = null;
-			carList.put("Subaru", 12000.00);
-			carList.put("Ford", 13000.00);
-			carList.put("Cadillac", 14000.00);
-			carList.put("BMW", 15000.00);
-			carList.put("Jeep", 16000.00);
-			carList.put("Chevrolet", 17000.00);
+			carList.put("Subaru", 29095.00);
+			carList.put("Ford", 29965.00);
+			carList.put("Cadillac", 63215.00);
+			carList.put("BMW", 40499.00);
+			carList.put("Jeep", 50317.00);
+			carList.put("Chevrolet", 49000.00);
 			System.out.println(carList);
-		return carList;
+		return carList.size();
 		
 	}
 	public double annualTerms() {
