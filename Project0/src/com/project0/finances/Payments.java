@@ -2,9 +2,12 @@ package com.project0.finances;
 
 import java.util.HashMap;
 import java.util.Scanner;
-import java.lang.Math.*;
 
 public class Payments {
+	public Payments() {
+		super();
+	}
+	
 		/*
 		 * I created a scanner to implement in all the methods below. 
 		 * just check it out and see if that is correct for your scanner class
@@ -15,7 +18,7 @@ public class Payments {
 	Scanner sc = new Scanner(System.in);
 	public HashMap<String, Double> carlist;
 	public double principal;
-	public double term;
+	public int term;
 	public double payments;
 	public double rate;
 
@@ -32,7 +35,7 @@ public class Payments {
 		return carList.size();
 		
 	}
-	public double annualTerms() {
+	public double annualTerms(int term) {
 		//number of months the auto loan will be
 		//customers will be able to select the terms of their loan
 		//need to use the scanner method 
@@ -41,7 +44,7 @@ public class Payments {
 			System.out.println(term);
 		}
 		System.out.println("Select the term that fits your desire.");
-		int term = sc.nextInt();
+		term = sc.nextInt();
 		System.out.println("Customer elected to term condition: "+term);
 		return term;	
 	}
@@ -87,7 +90,7 @@ public class Payments {
 	public double monthlyPayments(double monthlyPayment) {
 		double annualrate = this.interestRate(rate);
 		double vehicleprice = this.carLoan(principal);
-		double months = this.annualTerms(); 
+		double months = this.annualTerms(term); 
 	
 		monthlyPayment = ((annualrate*vehicleprice)/(1-(1 + annualrate)*(-(Math.sqrt(months)))));
 		
