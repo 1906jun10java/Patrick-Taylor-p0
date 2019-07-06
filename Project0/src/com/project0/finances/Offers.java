@@ -43,31 +43,26 @@ public class Offers {
 		}
 		return vehicleSelect;
 	}
-	public int StartingOffer(int offerAmt) {
+	public int StartingOffer(double offerAmt) {
 		System.out.println("Place an offer on "+vehicleSelect+" to begin the process");
 		offerAmt= sc.nextInt();
 		System.out.println("You elected to place "+offerAmt+" on your"+vehicleSelect);
 		
-		int offer= offerAmt;
+		int offer= 1;
 		switch(offer)
 		{
 		case 1:
 			if(offerAmt <= 999.99) {
 				System.out.println("Your offer is too low for the "+vehicleSelect);
-				//return offamt;
-				break;
-			}
-		case 2:
-			if(offerAmt >= 1000.00) {
+			} else if(offerAmt >= 1000.00) {
 				System.out.println("Your offer can't be beat for "+vehicleSelect+" lets start the negotiation process.");
-				//return offamt;
+			}	
 				break;
-			}
-		default: 
+		case 2: 
+			if(offerAmt < 0)
 			System.out.println("Please make an offer greater than 0.");
-			
 		}
-		return offerAmt;
+		return offer;
 		
 	}
 }
