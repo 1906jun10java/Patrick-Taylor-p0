@@ -3,9 +3,6 @@ package com.project0.beans;
 
 import java.util.ArrayList;
 
-
-import com.project0.inventory.Car;
-
 public class Customer extends User {
 
 	private ArrayList<Car> myCars = new ArrayList<Car>();

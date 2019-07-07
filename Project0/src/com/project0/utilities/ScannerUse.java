@@ -26,5 +26,5 @@ public class ScannerUse {
 	public Scanner returnScanner() {
 		return cs;
 	}
+
 }
- // credit to my roommates Ben and Nick for instructing me of how to use this 
