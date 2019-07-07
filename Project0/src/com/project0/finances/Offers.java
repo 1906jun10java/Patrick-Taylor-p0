@@ -4,13 +4,13 @@ public class Offers {
 
 	private int offerId;
 	private String customerUserName;
-	private int carId;
+	private int carsId;
 	private double offerAmount;
 
 	public Offers(int carId, double offerAmount, String customerUserName) {
 		super();
 		this.customerUserName = customerUserName;
-		this.carId = carId;
+		this.carsId = carId;
 		this.offerAmount = offerAmount;
 
 	}
@@ -33,11 +33,11 @@ public class Offers {
 	}
 
 	public int getCarId() {
-		return carId;
+		return carsId;
 	}
 
 	public void setCarId(int carId) {
-		this.carId = carId;
+		this.carsId = carId;
 	}
 
 	public double getOfferAmount() {
@@ -50,7 +50,7 @@ public class Offers {
 
 @Override
 	public String toString() {
-		return "Offers [offerId=" + offerId + ", customerUserName=" + customerUserName + ", carId=" + carId
+		return "Offers [offerId=" + offerId + ", customerUserName=" + customerUserName + ", carId=" + carsId
 				+ ", offerAmount=" + offerAmount + ", getOfferId()=" + getOfferId() + ", getCustomerUserName()="
 				+ getCustomerUserName() + ", getCarId()=" + getCarId() + ", getOfferAmount()=" + getOfferAmount()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()

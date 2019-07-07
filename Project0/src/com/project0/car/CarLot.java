@@ -1,135 +1,62 @@
 package com.project0.car;
 
+import java.util.ArrayList;
+import com.project0.beans.*;
+
 public class CarLot {
+	
+	static ArrayList<Car> carLot = new ArrayList<Car>();
 
-	public CarLot() {
-
-		super();
-
+	// addition of a car CarLot
+	public static void addCars(String make, String model, String color, int year, double milage, String transmission) {
+		Car c = new Car(make, model, color, year, milage, transmission);
+		carLot.add(c);
+		return;
 	}
 
-	// constructor for carLot
-
-	public CarLot(String make, String model, String color, int year, double milage, String transmission) {
-
-		super();
-
-		this.make = make;
-
-		this.model = model;
-
-		this.color = color;
-
-		this.year = year;
-
-		this.milage = milage;
-
-		this.transmission = transmission;
-
+	// adds a car object to the Array
+	public static void addCarsObject(Car c) {
+		carLot.add(c);
+		return;
 	}
 
-	// getters and setters for CarLot
-
-	private String make;
-
-	private String model;
-
-	private String color;
-
-	private int year;
-
-	private double milage;
-
-	private String transmission;
-
-	// private int vin; //might create an enum later for this
-
-	// private String drivetype;
-
-	// private String engine;
-
-	// getters and setters for CarLot
-
-	public String getMake() {
-
-		return make;
-
+	// removes cars from the Array
+	public static void removeCars(Car car) {
+		carLot.remove(car);
+		return;
 	}
 
-	public void setMake(String make) {
-
-		this.make = make;
-
+	// gets the Index of a specific car 
+	public static Car returnIndex(int index) {
+		if (index > carLot.size() || index < 0) {
+			System.out.println("You need to make a selection before we can continue");
+			return null;
+		}
+		Car c = carLot.get(index);
+		return c;
 	}
 
-	public String getModel() {
+	// prints all cars from the array list
+	public static void printLot() {
+		int t = 1;
+		for (Car c : carLot) {
+			System.out.println(t + ")");
+			System.out.println(c);
+			t++;
 
-		return model;
-
-	}
-
-	public void setModel(String model) {
-
-		this.model = model;
-
-	}
-
-	public String getColor() {
-
-		return color;
+		}
 
 	}
-
-	public void setColor(String color) {
-
-		this.color = color;
-
+	public static Car returnCarByiD(int carId) {
+		for (Car c: carLot) {
+			if(c.getCarId()== carId) {
+					return c;
+			}
+		}
+		
+		
+		System.out.println("No car with this Id please try again ");
+		return null;
+		
 	}
-
-	public int getYear() {
-
-		return year;
-
-	}
-
-	public void setYear(int year) {
-
-		this.year = year;
-
-	}
-
-	public double getMilage() {
-
-		return milage;
-
-	}
-
-	public void setMilage(double milage) {
-
-		this.milage = milage;
-
-	}
-
-	public String getTransmission() {
-
-		return transmission;
-
-	}
-
-	public void setTransmission(String transmission) {
-
-		this.transmission = transmission;
-
-	}
-
-	@Override
-
-	public String toString() {
-
-		return "CarLot [make=" + make + ", model=" + model + ", color=" + color + ", year=" + year + ", milage="
-
-				+ milage + ", transmission=" + transmission + "]";
-
-	}
-
 }
