@@ -17,7 +17,7 @@ public class OfferLog
 
 	public static HashMap<Double, Offers> offersmap = new HashMap<>();
 
-	// adds offers to HashMap
+	// creates new offers to HashMap
 	public static void newOffer(Customer customer)
 	{
 		int index = 0; // this will hold our index of the cars in our CarLot
