@@ -10,14 +10,16 @@ import com.project0.beans.Offers;
 import com.project0.car.CarLot;
 import com.project0.utilities.DataEntry;
 
-public class OfferLog {
+public class OfferLog
+{
 // we'll be able to use the non static methods in our class (
 	static DataEntry de = new DataEntry();
 
 	public static HashMap<Double, Offers> offersmap = new HashMap<>();
 
 	// adds offers to HashMap
-	public static void newOffer(Customer customer) {
+	public static void newOffer(Customer customer)
+	{
 		int index = 0; // this will hold our index of the cars in our CarLot
 		Double offer = 0.0; // this will hold the customers offer before its stored
 		Car car;
@@ -26,7 +28,8 @@ public class OfferLog {
 		System.out.println("interested in a car ? enter the number ! ");
 		index = de.thisInt(); // returns the index of the car ( to make it easier to "read")
 		car = CarLot.returnCarByiD(--index); // this will return the specific car that has the specific index
-		if (car == null) { // if the car does not have an index then null
+		if (car == null)
+		{ // if the car does not have an index then null
 			return;
 		}
 		System.out.println(car);
@@ -41,36 +44,42 @@ public class OfferLog {
 	}
 
 	// this will let us add offers to our Hashmap
-	public static void addToOfferMap(Offers oc) {
+	public static void addToOfferMap(Offers oc)
+	{
 		double offer = oc.getOfferAmount();
 		offersmap.put(offer, oc);
 		return;
 	}
 
 // this will let us view all key value pairs in our HashMap
-	public static void printOffers() {
+	public static void printOffers()
+	{
 		Set<Double> key = new HashSet<>();
 		int index = 1;
 
 		System.out.println("these are the number of bids on the car");
 		key = offersmap.keySet();
-		for (double offer : key) {
+		for (double offer : key)
+		{
 			Offers oc = offersmap.get(offer);
-			Car car = CarLot.returnCarByiD(oc.getCarId());
+			Car c = CarLot.returnCarByiD(oc.getCarId());
 			System.out.println(index + ")" + offer + ":+c");
 			index++;
 		}
 	}
 	// lets our employee pick an offer for our car
 
-	public static void selectOffer() {
+	public static void selectOffer()
+	{
 
 		double offerselector;
 		System.out.println("Select an offer");
 		offerselector = de.parseDouble();
 
-		if (offersmap.containsKey(offersmap)) {
-			Offers oc = offersmap.get(offersmap);
+		if (offersmap.containsKey(offerselector))
+		{ // if the specific key is used then this will call the offer thats
+			// paird to the key
+			Offers oc = offersmap.get(offerselector);
 			// payment will go here
 			Car c = CarLot.returnCarByiD(oc.getCarId());
 			// Soldcars will go here
@@ -78,7 +87,8 @@ public class OfferLog {
 			// ALL SQL HERE
 			System.out.println("Offer has been accepted");
 
-		} else {
+		} else
+		{
 			System.out.println("No offers have been accepted");
 		}
 		return;

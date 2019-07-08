@@ -1,58 +1,81 @@
 package com.project0.finances;
 
-
-public class Payments {
+public class Payments
+{
 	private int accountId;
 	private int carId;
 	private String cusUsername;
 	private double monthlyPayments;
 	private double payOffbalance;
-	public int getAccountId() {
-		return accountId;
-	
-	
-	
-	}
-	public Payments(int accountId, int carId, String cusUsername, double monthlyPayments, double payOffbalance) {
+
+	public Payments(int carId, String cusUsername, double monthlyPayments, double payOffbalance)
+	{
 		super();
-		this.accountId = accountId;
+		// this.accountId = accountId;
 		this.carId = carId;
 		this.cusUsername = cusUsername;
 		this.monthlyPayments = monthlyPayments;
 		this.payOffbalance = payOffbalance;
+
 	}
-	public void setAccountId(int accountId) {
+
+	/// getters and setters
+	public int getAccountId()
+	{
+		return accountId;
+
+	}
+
+	public void setAccountId(int accountId)
+	{
 		this.accountId = accountId;
 	}
-	public int getCarId() {
+
+	public int getCarId()
+	{
 		return carId;
 	}
-	public void setCarId(int carId) {
+
+	public void setCarId(int carId)
+	{
 		this.carId = carId;
 	}
-	public String getCusUsername() {
+
+	public String getCusUsername()
+	{
 		return cusUsername;
 	}
-	public void setCusUsername(String cusUsername) {
+
+	public void setCusUsername(String cusUsername)
+	{
 		this.cusUsername = cusUsername;
 	}
-	public double getMonthlyPayments() {
+
+	public double getMonthlyPayments()
+	{
 		return monthlyPayments;
 	}
-	public void setMonthlyPayments(double monthlyPayments) {
+
+	public void setMonthlyPayments(double monthlyPayments)
+	{
 		this.monthlyPayments = monthlyPayments;
 	}
-	public double getPayOffbalance() {
+
+	public double getPayOffbalance()
+	{
 		return payOffbalance;
 	}
-	public void setPayOffbalance(double payOffbalance) {
+
+	public void setPayOffbalance(double payOffbalance)
+	{
 		this.payOffbalance = payOffbalance;
 	}
+
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "Payments [accountId=" + accountId + ", carId=" + carId + ", cusUsername=" + cusUsername
 				+ ", monthlyPayments=" + monthlyPayments + ", payOffbalance=" + payOffbalance + "]";
 	}
 
 }
-
