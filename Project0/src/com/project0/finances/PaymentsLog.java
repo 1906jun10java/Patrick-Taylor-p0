@@ -42,7 +42,7 @@ public class PaymentsLog
 		Payments ps = paymentAccounts.get(userName);
 		return ps;
 	}
-
+// if there account is in the HashMap it will return true.
 	public static boolean accountHere(String key)
 	{
 		if (!paymentAccounts.containsKey(key))

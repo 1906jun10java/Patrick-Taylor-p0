@@ -34,7 +34,7 @@ class EmployeeSwitchCases
 			System.out.println("4) Remove a car");
 			System.out.println("5) Exit to Main Menu");
 			switchCase = de.thisInt();
-
+			
 			switch (switchCase)
 				{
 
@@ -54,6 +54,7 @@ class EmployeeSwitchCases
 					int year;
 					double milage;
 					String transmission;
+					int carId = 0;
 					// takes user input and stores them in the fields above
 					System.out.println("What make is the car ?: ");
 					make = cs.nextLine();
@@ -74,7 +75,7 @@ class EmployeeSwitchCases
 					transmission = cs.nextLine();
 
 					// constructs a new car and stores it in the CarLot
-					CarLot.addCars(make, model, color, year, milage, transmission);
+					CarLot.addCars(make, model, color, year, milage, transmission, carId);
 
 					// will print if car was succesfully added
 					System.out.println("Car added !");

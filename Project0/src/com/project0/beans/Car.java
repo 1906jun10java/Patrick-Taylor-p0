@@ -13,7 +13,7 @@ public class Car extends CarLot  {
 
 	// constructor for car
 
-	public Car(String make, String model, String color, int year, double milage, String transmission) {
+	public Car(String make, String model, String color, int year, double milage, String transmission,int carId) {
 
 		super();
 
@@ -28,6 +28,7 @@ public class Car extends CarLot  {
 		this.milage = milage;
 
 		this.transmission = transmission;
+		this.carId= carId;
 
 	}
 
@@ -44,6 +45,7 @@ public class Car extends CarLot  {
 	private double milage;
 
 	private String transmission;
+	
 	private Integer carId;
 
 	// private int vin; //might create an enum later for this

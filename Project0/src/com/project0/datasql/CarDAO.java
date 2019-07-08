@@ -5,6 +5,8 @@ import com.project0.beans.Car;
 
 public interface CarDAO
 {
+	public static ConnFactory cf = ConnFactory.getInstance();
+	
 	public void addNewCar(Car c) throws SQLException;
 
 	public void addToCarLot() throws SQLException;

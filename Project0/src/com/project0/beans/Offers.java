@@ -8,9 +8,10 @@ public class Offers
 	private int carsId;
 	private double offerAmount;
 
-	public Offers(int carId, double offerAmount, String customerUserName)
+	public Offers(int offerId, int carId, double offerAmount, String customerUserName)
 	{
 		super();
+		this.offerId = offerId;
 		this.customerUserName = customerUserName;
 		this.carsId = carId;
 		this.offerAmount = offerAmount;

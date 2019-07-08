@@ -8,15 +8,15 @@ public class CarLot {
 	static ArrayList<Car> carLot = new ArrayList<Car>();
 
 	// addition of a car CarLot
-	public static void addCars(String make, String model, String color, int year, double milage, String transmission) {
-		Car c = new Car(make, model, color, year, milage, transmission);
-		carLot.add(c);
+	public static void addCars(String make, String model, String color, int year, double milage, String transmission, int carId) {
+		Car car = new Car(make, model, color, year, milage, transmission, carId);
+		carLot.add(car);
 		return;
 	}
 
 	// adds a car object to the Array
-	public static void addCarsObject(Car c) {
-		carLot.add(c);
+	public static void addCarsObject(Car car) {
+		carLot.add(car);
 		return;
 	}
 
@@ -32,25 +32,25 @@ public class CarLot {
 			System.out.println("You need to make a selection before we can continue");
 			return null;
 		}
-		Car c = carLot.get(index);
-		return c;
+		Car car = carLot.get(index);
+		return car;
 	}
 
 	// prints all cars from the array list
 	public static void printLot() {
 		int t = 1;
-		for (Car c : carLot) {
+		for (Car car : carLot) {
 			System.out.println(t + ")");
-			System.out.println(c);
+			System.out.println(car);
 			t++;
 
 		}
 
 	}
 	public static Car returnCarByiD(int carId) {
-		for (Car c: carLot) {
-			if(c.getCarId()== carId) {
-					return c;
+		for (Car car: carLot) {
+			if(car.getCarId()== carId) {
+					return car;
 			}
 		}
 		

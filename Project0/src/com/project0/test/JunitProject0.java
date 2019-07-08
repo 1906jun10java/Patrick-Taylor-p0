@@ -1,8 +1,8 @@
 package com.project0.test;
 
+import org.junit.Test;
 
-
-	class JUnitProject0Test {
+class JUnitProject0Test {
 
 
 

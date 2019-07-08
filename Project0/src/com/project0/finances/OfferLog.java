@@ -36,8 +36,8 @@ public class OfferLog
 		System.out.println(car);
 		System.out.println("Make an offer for your selected car");
 		offer = de.parseDouble();
-
-		Offers oc = new Offers(car.getCarId(), offer, customer.getUsername());
+		// this is making a new offer while getting the CarId, OfferId , the OfferAmount, the customer username 
+		Offers oc = new Offers(car.getCarId(), customer.getOfferId() , customer.getOfferAmount(), customer.getUsername());
 		offersmap.put(offer, oc);
 
 		// SQLUtility.tryCreateNewOffer(oc);
@@ -63,8 +63,9 @@ public class OfferLog
 		for (double offer : key)
 		{
 			Offers oc = offersmap.get(offer);
-			Car c = CarLot.returnCarByiD(oc.getCarId());
-			System.out.println(index + ")" + offer + ":+c");
+			System.out.println(oc);
+			Car car = CarLot.returnCarByiD(oc.getCarId());
+			System.out.println(index + ")" + offer + ":"+car);
 			index++;
 		}
 	}
@@ -84,11 +85,11 @@ public class OfferLog
 		
 			// payment will go here
 			PaymentsLog.createNewPaymentAccount(oc);
-			Car c = CarLot.returnCarByiD(oc.getCarId());
+			Car car = CarLot.returnCarByiD(oc.getCarId());
 			
 			// Soldcars will go here
-			OwnedCars.addCarsObj(c);
-			CarLot.removeCars(c);
+			OwnedCars.addCarsObj(car);
+			CarLot.removeCars(car);
 			
 			// ALL SQL HERE
 			System.out.println("Offer has been accepted");

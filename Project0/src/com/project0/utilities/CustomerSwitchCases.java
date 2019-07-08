@@ -1,5 +1,7 @@
 package com.project0.utilities;
 
+import java.util.Scanner;
+
 import com.project0.beans.Customer;
 import com.project0.car.CarLot;
 import com.project0.finances.OfferLog;
@@ -14,8 +16,8 @@ public class CustomerSwitchCases
 	}
 
 // using Scanner.. or rather not sure if we need it for now  
-//	static ScannerUse su = ScannerUse.getInstance();
-//	static Scanner cs = su.returnScanner();
+	static ScannerUse su = ScannerUse.getInstance();
+	static Scanner cs = su.returnScanner();
 
 	// But ! we will use our DataEntry!
 	DataEntry de = new DataEntry();
@@ -23,7 +25,7 @@ public class CustomerSwitchCases
 	// exit but only will exit when statement is true
 	boolean exitTomenu = false;
 	// our switch case variable
-	int switchCase = 0;
+	int customerSwitchCase = 0;
 
 	private Customer customer;
 	{
@@ -41,9 +43,10 @@ public class CustomerSwitchCases
 			System.out.println("5) Logout");
 
 			// this is where our parsed int comes int
-			switchCase = de.thisInt();
+			customerSwitchCase = de.thisInt();
+			cs.nextInt();
 
-			switch (switchCase)
+			switch (customerSwitchCase)
 				{
 
 				case 1: // Make a payment
