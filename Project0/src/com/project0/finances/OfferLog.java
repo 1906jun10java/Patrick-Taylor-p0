@@ -9,6 +9,7 @@ import com.project0.beans.Customer;
 import com.project0.beans.Offers;
 import com.project0.car.CarLot;
 import com.project0.utilities.DataEntry;
+import com.project0.utilities.OwnedCars;
 
 public class OfferLog
 {
@@ -78,12 +79,17 @@ public class OfferLog
 
 		if (offersmap.containsKey(offerselector))
 		{ // if the specific key is used then this will call the offer thats
-			// paird to the key
+			// paired to the key
 			Offers oc = offersmap.get(offerselector);
+		
 			// payment will go here
+			PaymentsLog.createNewPaymentAccount(oc);
 			Car c = CarLot.returnCarByiD(oc.getCarId());
+			
 			// Soldcars will go here
+			OwnedCars.addCarsObj(c);
 			CarLot.removeCars(c);
+			
 			// ALL SQL HERE
 			System.out.println("Offer has been accepted");
 

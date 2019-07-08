@@ -1,7 +1,4 @@
 package com.project0.test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 
 
 
@@ -13,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 		void test() {
 
-			JUnitProject0 test = new JUnitProject0();
+			JUnitProject0Test test = new JUnitProject0Test();
 
 			//we're expecting to return an int value, or the case, and the parameter inside is a double amount.
 

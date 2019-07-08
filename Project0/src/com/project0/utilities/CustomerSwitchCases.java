@@ -1,7 +1,6 @@
 package com.project0.utilities;
 
 import com.project0.beans.Customer;
-
 import com.project0.car.CarLot;
 import com.project0.finances.OfferLog;
 import com.project0.finances.Payments;
@@ -89,12 +88,14 @@ public class CustomerSwitchCases
 
 				case 3:// view my cars
 					if (!PaymentsLog.accountHere(customer.getUsername()))
+					{
 						;
-					System.out.println("You have no cars .. Lets fix that !");
-					break;
+						System.out.println("You have no cars .. Lets fix that !");
+						break;
+					}
 
-					Payments payMycar = PaymentsLog.returnAccounts(customer.getUsername());
-					SoldCars.printSoldCars(payMycar.getCarId());
+					Payments payCar = PaymentsLog.returnAccounts(customer.getUsername());
+					OwnedCars.printSoldOnes(payCar.getCarId());
 					break;
 
 				case 4:

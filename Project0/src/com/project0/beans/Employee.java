@@ -2,7 +2,7 @@ package com.project0.beans;
 
 import java.util.ArrayList;
 
-import com.project0.inventory.*;
+import com.project0.dataimpl.*;
 
 public class Employee extends User {
 	protected String username;
