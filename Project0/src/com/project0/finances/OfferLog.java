@@ -6,54 +6,82 @@ import java.util.Set;
 
 import com.project0.beans.Car;
 import com.project0.beans.Customer;
+import com.project0.beans.Offers;
 import com.project0.car.CarLot;
 import com.project0.utilities.DataEntry;
 
 public class OfferLog {
+// we'll be able to use the non static methods in our class (
+	static DataEntry de = new DataEntry();
 
-	public static HashMap<Double, Offers> offer = new HashMap<>();
+	public static HashMap<Double, Offers> offersmap = new HashMap<>();
 
-// when you want to add to our HashMap 
+	// adds offers to HashMap
+	public static void newOffer(Customer customer) {
+		int index = 0; // this will hold our index of the cars in our CarLot
+		Double offer = 0.0; // this will hold the customers offer before its stored
+		Car car;
+
+		CarLot.printLot(); // this will print all of our cars
+		System.out.println("interested in a car ? enter the number ! ");
+		index = de.thisInt(); // returns the index of the car ( to make it easier to "read")
+		car = CarLot.returnCarByiD(--index); // this will return the specific car that has the specific index
+		if (car == null) { // if the car does not have an index then null
+			return;
+		}
+		System.out.println(car);
+		System.out.println("Make an offer for your selected car");
+		offer = de.parseDouble();
+
+		Offers oc = new Offers(car.getCarId(), offer, customer.getUsername());
+		offersmap.put(offer, oc);
+
+		// SQLUtility.tryCreateNewOffer(oc);
+		System.out.println("Offer has been placed , please wait for employee approval");
+	}
+
+	// this will let us add offers to our Hashmap
 	public static void addToOfferMap(Offers oc) {
 		double offer = oc.getOfferAmount();
-		offers.put(offer,oc);
+		offersmap.put(offer, oc);
 		return;
 	}
-	
-	// print out all our offers 
+
+// this will let us view all key value pairs in our HashMap
 	public static void printOffers() {
 		Set<Double> key = new HashSet<>();
 		int index = 1;
-		
-		System.out.println("These are the current offers on a  car");
-		
-		key = offers.keySet();
-		for(double offers : key ) {
-			;
-			Car c = CarLot.returnCarByiD(oc.getCarId());
-			System.out.println(index + ")"+ offer+":"+c) ;
+
+		System.out.println("these are the number of bids on the car");
+		key = offersmap.keySet();
+		for (double offer : key) {
+			Offers oc = offersmap.get(offer);
+			Car car = CarLot.returnCarByiD(oc.getCarId());
+			System.out.println(index + ")" + offer + ":+c");
 			index++;
-			
 		}
 	}
+	// lets our employee pick an offer for our car
 
-	// we'll be able to use the non static methods in our class (
-	static DataEntry de = new DataEntry();
+	public static void selectOffer() {
 
-	public static void newOffersCustomer(Customer customer) {
-		int index = 0;
-		double offers = 0;
-		Car car;
+		double offerselector;
+		System.out.println("Select an offer");
+		offerselector = de.parseDouble();
 
-		CarLot.printLot(); // prints our our cars
-		System.out.println("enter the car Id you want to bid on today");
-		index = de.thisInt(); // returns the index of our car selected
-		car = CarLot.returnCarByiD(index); // this will return our cars from out vacant lot
-		if (car == null) {
-			return;
+		if (offersmap.containsKey(offersmap)) {
+			Offers oc = offersmap.get(offersmap);
+			// payment will go here
+			Car c = CarLot.returnCarByiD(oc.getCarId());
+			// Soldcars will go here
+			CarLot.removeCars(c);
+			// ALL SQL HERE
+			System.out.println("Offer has been accepted");
 
+		} else {
+			System.out.println("No offers have been accepted");
 		}
+		return;
 
 	}
-
 }

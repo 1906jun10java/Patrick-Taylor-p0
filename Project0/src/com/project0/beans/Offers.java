@@ -1,4 +1,4 @@
-package com.project0.finances;
+package com.project0.beans;
 
 public class Offers {
 
